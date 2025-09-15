@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       text-align: center;
       background-color: #f0f0f0;
-      transition: background-color 5s ease; /* Smooth 5s fade effect */
+      transition: background-color 5s ease; 
       padding: 50px;
     }
 
@@ -32,17 +32,15 @@
   <p>Where Music Meets Taste</p>
 
   <script>
-    // List of nice colors
+    
     const colors = ["#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff"];
 
-    // Function to change background color
     function changeColor() {
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
       document.body.style.backgroundColor = randomColor;
     }
 
-    // Change color every 5 seconds
-    setInterval(changeColor, 5000);
+    setInterval(changeColor, 1000);
   </script>
 </body>
 </html>
