@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Auto Background Color Change</title>
+  <title>Groove</title>
 
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       background-color: #f0f0f0;
-      transition: background 0.5s;
+      transition: background-color 5s ease; /* Smooth 5s fade effect */
       padding: 50px;
     }
 
@@ -24,8 +24,8 @@
   </style>
 </head>
 <body>
-  <h1>Welcome Senpai 🌸</h1>
-  <p>The background will change color automatically every 2 seconds!</p>
+  <h1>Groove 🎵</h1>
+  <p>Learn Music</p>
 
   <script>
     // List of nice colors
@@ -37,8 +37,8 @@
       document.body.style.backgroundColor = randomColor;
     }
 
-    // Change color every 2 seconds (2000 milliseconds)
-    setInterval(changeColor, 2000);
+    // Change color every 5 seconds
+    setInterval(changeColor, 5000);
   </script>
 </body>
 </html>
