@@ -13,6 +13,91 @@
       padding: 50px;
     }
 
+    /* Container for the heading with two background images side by side */
+    .header-bg {
+      display: flex;
+      justify-content: center; /* center images horizontally */
+      align-items: center;
+      gap: 20px; /* space between images */
+      padding: 30px;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.2); /* slight overlay for blending */
+    }
+
+    .header-bg img {
+      width: 250px;       /* adjust size */
+      height: 150px;
+      object-fit: cover;
+      border-radius: 15px;
+      opacity: 0.8;       /* slight transparency to blend with background */
+      transition: transform 0.3s;
+    }
+
+    .header-bg img:hover {
+      transform: scale(1.05);
+    }
+
+    .header-text {
+      position: absolute;
+      top: 60px;          /* adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    }
+
+    .header-text h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .header-text p {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with images -->
+  <div style="position: relative;">
+    <div class="header-bg">
+      <img src="https://i.pinimg.com/736x/22/99/d2/2299d2644b657c4295aa49bbcc9ae687.jpg" alt="Music Background 1">
+      <img src="https://i.pinimg.com/1200x/93/fe/4e/93fe4ecb3d429b2b1e70bfce10f9d453.jpg" alt="Music Background 2">
+    </div>
+    <div class="header-text">
+      <h1>Groove ✨</h1>
+      <p>Where Music Meets Taste</p>
+    </div>
+  </div>
+
+  <script>
+    const colors = ["#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff"];
+
+    function changeColor() {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+
+    setInterval(changeColor, 5000);
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Groove</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      transition: background-color 5s ease; /* Smooth color fade */
+      padding: 50px;
+    }
+
     /* Container for the heading with background image */
     .header-bg {
       background-image: url('https://i.pinimg.com/736x/22/99/d2/2299d2644b657c4295aa49bbcc9ae687.jpg');
