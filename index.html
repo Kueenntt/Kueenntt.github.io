@@ -6,6 +6,7 @@
   <title>Groove - Where Music Meets Taste</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* BASIC STYLES */
     * {
       margin: 0;
       padding: 0;
@@ -28,7 +29,7 @@
       padding: 20px;
     }
     
-    /* Header Styles */
+    /* HEADER STYLES */
     .header-bg {
       position: relative;
       display: inline-block;
@@ -74,7 +75,7 @@
       margin-top: 10px;
     }
     
-    /* Navigation */
+    /* NAVIGATION */
     nav {
       background: rgba(0, 0, 0, 0.8);
       padding: 15px 0;
@@ -105,7 +106,7 @@
       color: #ffd6a5;
     }
     
-    /* Section Styles */
+    /* SECTION STYLES */
     section {
       padding: 60px 20px;
       margin: 30px 0;
@@ -120,7 +121,13 @@
       color: #444;
     }
     
-    /* About Section */
+    h3 {
+      font-size: 24px;
+      margin: 20px 0;
+      color: #555;
+    }
+    
+    /* ABOUT SECTION */
     .about-content {
       display: flex;
       align-items: center;
@@ -149,7 +156,75 @@
       display: block;
     }
     
-    /* Events Section */
+    /* MUSIC THEORY SECTION */
+    .music-theory {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+    }
+    
+    .theory-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .theory-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 20px;
+      width: 200px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .theory-card i {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+    
+    /* INSTRUMENTS SECTION */
+    .instruments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .instrument-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .instrument-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .instrument-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .instrument-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .instrument-card:hover .instrument-image img {
+      transform: scale(1.1);
+    }
+    
+    .instrument-details {
+      padding: 20px;
+    }
+    
+    /* EVENTS SECTION */
     .events-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -195,7 +270,7 @@
       margin-bottom: 10px;
     }
     
-    /* Menu Section */
+    /* MENU SECTION */
     .menu-items {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -226,7 +301,7 @@
       font-size: 20px;
     }
     
-    /* Contact Section */
+    /* CONTACT SECTION */
     .contact-content {
       display: flex;
       flex-wrap: wrap;
@@ -264,7 +339,7 @@
       border: none;
     }
     
-    /* Footer */
+    /* FOOTER */
     footer {
       background: rgba(0, 0, 0, 0.9);
       color: white;
@@ -287,7 +362,7 @@
       color: #ffd6a5;
     }
     
-    /* Responsive Design */
+    /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
       .header-bg {
         padding: 30px 15px;
@@ -318,6 +393,8 @@
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#music">Music Theory</a></li>
+      <li><a href="#instruments">Instruments</a></li>
       <li><a href="#events">Events</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -341,12 +418,82 @@
       <h2>About Groove</h2>
       <div class="about-content">
         <div class="about-text">
-          <p>Welcome to Groove, the ultimate destination where culinary excellence meets musical brilliance. Founded in 2020, we've created a unique space that celebrates the harmony between gourmet dining and live music.</p>
-          <p>Our chefs craft exquisite dishes using locally-sourced ingredients, while our venue hosts talented musicians from around the world. Whether you're here for a romantic dinner, a night out with friends, or to discover new musical talent, Groove offers an unforgettable experience.</p>
-          <p>Our interior blends industrial chic with cozy intimacy, featuring state-of-the-art acoustics that make every performance sound exceptional. At Groove, we believe that good food and good music are the perfect combination for creating lasting memories.</p>
+          <p>Welcome to Groove, where culinary excellence meets musical brilliance. As part of my Aesthetics course in the Bhutan Baccalaureate program, I've combined my passion for music theory and performance with gourmet dining to create this unique concept.</p>
+          <p>At Groove, we believe that music and food share a common language of rhythm, harmony, and expression. Our chefs compose dishes that harmonize with the musical performances, creating a multisensory experience that delights both the palate and the ears.</p>
+          <p>Drawing from my studies in music theory and practical experience with guitar and drums, I've curated a space where every element works in concert to create an unforgettable atmosphere.</p>
         </div>
         <div class="about-image">
           <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG11c2ljJTIwcmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Groove interior">
+        </div>
+      </div>
+    </section>
+
+    <!-- Music Theory Section -->
+    <section id="music" class="music-theory">
+      <h2>Music Theory in Practice</h2>
+      <p>At Groove, we apply fundamental music theory concepts to create harmonious dining experiences</p>
+      
+      <div class="theory-container">
+        <div class="theory-card">
+          <i class="fas fa-music"></i>
+          <h3>Rhythm</h3>
+          <p>Timing and pace in both music and food service</p>
+        </div>
+        
+        <div class="theory-card">
+          <i class="fas fa-wave-square"></i>
+          <h3>Harmony</h3>
+          <p>Blending flavors and sounds in perfect balance</p>
+        </div>
+        
+        <div class="theory-card">
+          <i class="fas fa-sliders-h"></i>
+          <h3>Dynamics</h3>
+          <p>Controlling volume and intensity throughout the experience</p>
+        </div>
+        
+        <div class="theory-card">
+          <i class="fas fa-drum"></i>
+          <h3>Texture</h3>
+          <p>Layering sounds and flavors for depth and complexity</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instruments Section -->
+    <section id="instruments">
+      <h2>Musical Instruments</h2>
+      <p>Showcasing the instruments I've mastered through my Aesthetics studies</p>
+      
+      <div class="instruments-grid">
+        <div class="instrument-card">
+          <div class="instrument-image">
+            <img src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z3VpdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Guitar">
+          </div>
+          <div class="instrument-details">
+            <h3>Guitar</h3>
+            <p>From classical techniques to contemporary styles, the guitar offers versatile expression across genres. I've studied chord progressions, fingerstyle patterns, and improvisation techniques.</p>
+          </div>
+        </div>
+        
+        <div class="instrument-card">
+          <div class="instrument-image">
+            <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZHJ1bSUyMHNldHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Drums">
+          </div>
+          <div class="instrument-details">
+            <h3>Drums</h3>
+            <p>As the foundation of rhythm, drums create the heartbeat of music. I've practiced various time signatures, polyrhythms, and dynamic control to build solid rhythmic foundations.</p>
+          </div>
+        </div>
+        
+        <div class="instrument-card">
+          <div class="instrument-image">
+            <img src="https://images.unsplash.com/photo-1571974599782-87624638275f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGlhbm98ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="Piano">
+          </div>
+          <div class="instrument-details">
+            <h3>Piano</h3>
+            <p>The perfect instrument for understanding music theory, harmony, and composition. I've used piano to study chord structures and melodic development.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -362,7 +509,7 @@
           <div class="event-details">
             <div class="event-date">September 25, 2023 | 8:00 PM</div>
             <h3>Smooth Jazz Night</h3>
-            <p>Enjoy an evening of smooth jazz performances by The Midnight Quartet, featuring special guest vocalist Sarah Miles.</p>
+            <p>Enjoy an evening of smooth jazz performances featuring complex harmonies and improvisation techniques I've studied in music theory.</p>
           </div>
         </div>
         
@@ -373,7 +520,7 @@
           <div class="event-details">
             <div class="event-date">October 3, 2023 | 7:00 PM</div>
             <h3>Vinyl & Wine</h3>
-            <p>Join us for a special evening of vintage vinyl spins by DJ Soulful while enjoying wine pairings selected by our sommelier.</p>
+            <p>Join us for a special evening of vintage vinyl spins while enjoying wine pairings selected by our sommelier. We'll analyze the musical structures of classic recordings.</p>
           </div>
         </div>
         
@@ -384,7 +531,7 @@
           <div class="event-details">
             <div class="event-date">October 12, 2023 | 6:30 PM</div>
             <h3>Acoustic Sessions</h3>
-            <p>Intimate acoustic performances by emerging artists in our cozy lounge area. The perfect way to unwind after a long week.</p>
+            <p>Intimate acoustic performances featuring guitar techniques I've mastered, from fingerpicking to percussive styles.</p>
           </div>
         </div>
       </div>
@@ -393,6 +540,7 @@
     <!-- Menu Section -->
     <section id="menu">
       <h2>Signature Dishes</h2>
+      <p>Our menu items are inspired by musical concepts and elements</p>
       <div class="menu-items">
         <div class="menu-item">
           <h3>Harmony Burger</h3>
@@ -460,7 +608,7 @@
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-spotify"></i></a>
       </div>
-      <p>&copy; 2023 Groove. All rights reserved.</p>
+      <p>&copy; 2023 Groove. All rights reserved. | Created as part of my Bhutan Baccalaureate Aesthetics studies</p>
     </div>
   </footer>
 
