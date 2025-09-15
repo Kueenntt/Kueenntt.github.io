@@ -2,76 +2,467 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Groove</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groove - Where Music Meets Taste</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       text-align: center;
       background-color: #f0f0f0;
-      transition: background-color 5s ease; /* Smooth color fade */
-      padding: 50px;
+      transition: background-color 5s ease;
+      color: #333;
+      line-height: 1.6;
+      padding: 0;
     }
-
-    /* Container with both images behind the heading */
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Header Styles */
     .header-bg {
       position: relative;
       display: inline-block;
       padding: 50px;
       border-radius: 15px;
       overflow: hidden;
+      margin: 30px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
-
+    
     .header-bg img {
       position: absolute;
       top: 0;
-      width: 50%;         /* each image takes half the width */
+      width: 50%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.5;       /* semi-transparent to blend */
+      opacity: 0.5;
       z-index: 1;
     }
-
+    
     .header-bg img:first-child {
       left: 0;
     }
-
+    
     .header-bg img:last-child {
       right: 0;
     }
-
-    /* Text above the images */
+    
     .header-text {
       position: relative;
-      z-index: 2; /* above images */
+      z-index: 2;
       color: #fff;
       text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
     }
-
+    
     .header-text h1 {
       font-size: 48px;
       margin: 0;
     }
-
+    
     .header-text p {
       font-size: 24px;
       margin-top: 10px;
     }
+    
+    /* Navigation */
+    nav {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    
+    nav li {
+      margin: 0 20px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: #ffd6a5;
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 60px 20px;
+      margin: 30px 0;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #444;
+    }
+    
+    /* About Section */
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Events Section */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .event-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .event-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .event-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .event-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .event-card:hover .event-image img {
+      transform: scale(1.1);
+    }
+    
+    .event-details {
+      padding: 20px;
+    }
+    
+    .event-date {
+      color: #777;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    /* Menu Section */
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .menu-item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .menu-item h3 {
+      color: #555;
+      margin-bottom: 10px;
+    }
+    
+    .menu-item p {
+      color: #777;
+      margin-bottom: 15px;
+    }
+    
+    .price {
+      font-weight: bold;
+      color: #333;
+      font-size: 20px;
+    }
+    
+    /* Contact Section */
+    .contact-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+    
+    .contact-info div {
+      margin-bottom: 20px;
+    }
+    
+    .contact-info i {
+      margin-right: 10px;
+      color: #555;
+      width: 20px;
+    }
+    
+    .map {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .map iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+    
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 60px;
+    }
+    
+    .social-icons {
+      margin: 20px 0;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 24px;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: #ffd6a5;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-bg {
+        padding: 30px 15px;
+      }
+      
+      .header-text h1 {
+        font-size: 36px;
+      }
+      
+      .header-text p {
+        font-size: 18px;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav li {
+        margin: 10px 0;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <div class="header-bg">
-    <!-- Two images side by side behind the heading -->
-    <img src="https://i.pinimg.com/736x/22/99/d2/2299d2644b657c4295aa49bbcc9ae687.jpg" alt="Background 1">
-    <img src="https://i.pinimg.com/1200x/93/fe/4e/93fe4ecb3d429b2b1e70bfce10f9d453.jpg" alt="Background 2">
-    
-    <!-- Heading text on top -->
-    <div class="header-text">
-      <h1>Groove ✨</h1>
-      <p>Where Music Meets Taste</p>
+  <div class="container">
+    <!-- Header -->
+    <div class="header-bg" id="home">
+      <img src="https://i.pinimg.com/736x/22/99/d2/2299d2644b657c4295aa49bbcc9ae687.jpg" alt="Music background">
+      <img src="https://i.pinimg.com/1200x/93/fe/4e/93fe4ecb3d429b2b1e70bfce10f9d453.jpg" alt="Food background">
+      
+      <div class="header-text">
+        <h1>Groove ✨</h1>
+        <p>Where Music Meets Taste</p>
+      </div>
     </div>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Groove</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Welcome to Groove, the ultimate destination where culinary excellence meets musical brilliance. Founded in 2020, we've created a unique space that celebrates the harmony between gourmet dining and live music.</p>
+          <p>Our chefs craft exquisite dishes using locally-sourced ingredients, while our venue hosts talented musicians from around the world. Whether you're here for a romantic dinner, a night out with friends, or to discover new musical talent, Groove offers an unforgettable experience.</p>
+          <p>Our interior blends industrial chic with cozy intimacy, featuring state-of-the-art acoustics that make every performance sound exceptional. At Groove, we believe that good food and good music are the perfect combination for creating lasting memories.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG11c2ljJTIwcmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Groove interior">
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGl2ZSUyMG11c2ljJTIwZXZlbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="Jazz Night">
+          </div>
+          <div class="event-details">
+            <div class="event-date">September 25, 2023 | 8:00 PM</div>
+            <h3>Smooth Jazz Night</h3>
+            <p>Enjoy an evening of smooth jazz performances by The Midnight Quartet, featuring special guest vocalist Sarah Miles.</p>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxpdmUlMjBtdXNpYyUyMGV2ZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Vinyl Session">
+          </div>
+          <div class="event-details">
+            <div class="event-date">October 3, 2023 | 7:00 PM</div>
+            <h3>Vinyl & Wine</h3>
+            <p>Join us for a special evening of vintage vinyl spins by DJ Soulful while enjoying wine pairings selected by our sommelier.</p>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://images.unsplash.com/photo-1501281667305-0d4e0ab157b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxpdmUlMjBtdXNpYyUyMGV2ZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Acoustic Session">
+          </div>
+          <div class="event-details">
+            <div class="event-date">October 12, 2023 | 6:30 PM</div>
+            <h3>Acoustic Sessions</h3>
+            <p>Intimate acoustic performances by emerging artists in our cozy lounge area. The perfect way to unwind after a long week.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+      <h2>Signature Dishes</h2>
+      <div class="menu-items">
+        <div class="menu-item">
+          <h3>Harmony Burger</h3>
+          <p>Grassed beef, aged cheddar, caramelized onions, and our special sauce on a brioche bun.</p>
+          <div class="price">$18</div>
+        </div>
+        
+        <div class="menu-item">
+          <h3>Melody Salad</h3>
+          <p>Mixed greens, grilled peaches, goat cheese, candied pecans, and raspberry vinaigrette.</p>
+          <div class="price">$14</div>
+        </div>
+        
+        <div class="menu-item">
+          <h3>Rhythm Bowl</h3>
+          <p>Quinoa, roasted vegetables, avocado, chickpeas, and tahini dressing.</p>
+          <div class="price">$16</div>
+        </div>
+        
+        <div class="menu-item">
+          <h3>Bass Line Pasta</h3>
+          <p>Handmade fettuccine, wild mushrooms, truffle oil, and parmesan.</p>
+          <div class="price">$22</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Find Us</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>123 Melody Lane, Harmony City, HC 54321</span>
+          </div>
+          <div>
+            <i class="fas fa-phone"></i>
+            <span>(555) 123-4567</span>
+          </div>
+          <div>
+            <i class="fas fa-envelope"></i>
+            <span>info@groove.com</span>
+          </div>
+          <div>
+            <i class="fas fa-clock"></i>
+            <span>Monday-Thursday: 5pm-11pm<br>Friday-Saturday: 5pm-1am<br>Sunday: 11am-9pm</span>
+          </div>
+        </div>
+        
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.621465758547!2d-74.00594934867827!3d40.72551664252105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259eb7d421f99%3A0x55932f4650cb1c4b!2sGreenwich%20Village%2C%20New%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1678889832311!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <h3>Follow Our Groove</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-spotify"></i></a>
+      </div>
+      <p>&copy; 2023 Groove. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
     const colors = ["#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff"];
@@ -82,6 +473,21 @@
     }
 
     setInterval(changeColor, 5000);
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
 </body>
 </html>
