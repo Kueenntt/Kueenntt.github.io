@@ -2,62 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Beginner Friendly Website</title>
+  <title>Auto Background Color Change</title>
 
-  <!-- CSS (for styling) -->
   <style>
     body {
-      font-family: Arial, sans-serif; /* Sets the text font */
-      text-align: center;             /* Puts everything in the center */
-      background-color: #f0f0f0;      /* Light gray background */
-      transition: background 0.5s;    /* Smooth background color change */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      transition: background 0.5s;
       padding: 50px;
     }
 
     h1 {
-      color: #333; /* Dark gray heading */
+      color: #333;
     }
 
     p {
-      color: #555; /* Slightly lighter text color */
+      color: #555;
       font-size: 18px;
-    }
-
-    button {
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #0077ff; /* Blue button */
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #0057b8; /* Darker blue when mouse hovers */
     }
   </style>
 </head>
 <body>
-  <!-- Website Content -->
-  <h1>Welcome to My Website 🌸</h1>
-  <p>This is a beginner-friendly website you can explain to anyone.</p>
-  <p>Click the button to change the background color!</p>
+  <h1>Welcome Senpai 🌸</h1>
+  <p>The background will change color automatically every 2 seconds!</p>
 
-  <button onclick="changeColor()">Change Background</button>
-
-  <!-- JavaScript (for interactivity) -->
   <script>
+    // List of nice colors
+    const colors = ["#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff"];
+
+    // Function to change background color
     function changeColor() {
-      // A list of nice colors
-      const colors = ["#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff"];
-
-      // Pick a random color from the list
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-      // Change the background to that color
       document.body.style.backgroundColor = randomColor;
     }
+
+    // Change color every 2 seconds (2000 milliseconds)
+    setInterval(changeColor, 2000);
   </script>
 </body>
 </html>
