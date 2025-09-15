@@ -13,26 +13,34 @@
       padding: 50px;
     }
 
-    /* Container with images blended behind the heading */
+    /* Container with both images behind the heading */
     .header-bg {
       position: relative;
       display: inline-block;
       padding: 50px;
       border-radius: 15px;
-      overflow: hidden; /* ensures images stay inside the container */
+      overflow: hidden;
     }
 
     .header-bg img {
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
+      width: 50%;         /* each image takes half the width */
       height: 100%;
       object-fit: cover;
-      opacity: 0.5; /* semi-transparent to blend with body background */
+      opacity: 0.5;       /* semi-transparent to blend */
       z-index: 1;
     }
 
+    .header-bg img:first-child {
+      left: 0;
+    }
+
+    .header-bg img:last-child {
+      right: 0;
+    }
+
+    /* Text above the images */
     .header-text {
       position: relative;
       z-index: 2; /* above images */
@@ -54,7 +62,7 @@
 <body>
 
   <div class="header-bg">
-    <!-- Two images blended as background -->
+    <!-- Two images side by side behind the heading -->
     <img src="https://i.pinimg.com/736x/22/99/d2/2299d2644b657c4295aa49bbcc9ae687.jpg" alt="Background 1">
     <img src="https://i.pinimg.com/1200x/93/fe/4e/93fe4ecb3d429b2b1e70bfce10f9d453.jpg" alt="Background 2">
     
